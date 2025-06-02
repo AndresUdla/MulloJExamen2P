@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net.Http.Json;
+using MulloJExamen2P.Models;
 
 namespace MulloJExamen2P.Repositories
 {
-    internal class JokeRepository
+    public class JokeRepository
     {
+        private readonly HttpClient _httpClient = new();
+
+        public async Task<Joke> GetRandomJokeAsync()
+        {
+            var url = "https://official-joke-api.appspot.com/random_joke";
+            return await _httpClient.GetFromJsonAsync<Joke>(url);
+        }
     }
 }
