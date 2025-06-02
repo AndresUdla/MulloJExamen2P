@@ -1,23 +1,22 @@
-﻿namespace MulloJExamen2P
+﻿namespace MulloJExamen2P.Views;
+
+public partial class MainPage : ContentPage
 {
-    public partial class MainPage : ContentPage
+
+    public MainPage()
     {
-        int count = 0;
-
-        public MainPage()
-        {
-            InitializeComponent();
-        }
-
-        private void IrAJokesPage_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void IrAAboutPage_Clicked(object sender, EventArgs e)
-        {
-
-        }
+        InitializeComponent();
     }
 
+    private void IrAJokesPage_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new JokesPage());
+
+    }
+
+    private void IrAAboutPage_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new AboutPage());
+
+    }
 }
