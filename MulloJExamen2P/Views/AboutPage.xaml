@@ -53,8 +53,8 @@
             </StackLayout>
             
             <StackLayout Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">
-                <Label Text="Versión:" FontAttributes="Bold" />
-                <Label Text="0.3"/>
+                <Label Text="Versión:" FontAttributes="Bold" TextColor="Black" />
+                <Label Text="0.3" TextColor="Black"/>
             </StackLayout>
         </Grid>
 
