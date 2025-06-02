@@ -1,9 +1,33 @@
+using MulloJExamen2P.Repositories;
+
 namespace MulloJExamen2P.Views;
 
 public partial class JokesPage : ContentPage
 {
-	public JokesPage()
-	{
-		InitializeComponent();
-	}
+    private readonly JokeRepository _jokeRepository = new();
+
+    public JokesPage()
+    {
+        InitializeComponent();
+        CargarChiste();
+    }
+
+    private async void CargarChiste()
+    {
+        JokeLabel.Text = "Cargando chiste...";
+        try
+        {
+            var joke = await _jokeRepository.GetRandomJokeAsync();
+            JokeLabel.Text = $"{joke.Setup}\n\n{joke.Punchline}";
+        }
+        catch
+        {
+            JokeLabel.Text = "No se pudo cargar el chiste.";
+        }
+    }
+
+    private void GenerarChiste_Clicked(object sender, EventArgs e)
+    {
+        CargarChiste();
+    }
 }
