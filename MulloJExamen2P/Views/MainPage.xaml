@@ -27,16 +27,16 @@
                 SemanticProperties.Description="dot net bot in a race car number eight" />
 
             <Button
-                x:Name="CounterBtn"
+                x:Name="IrAJokesPage"
                 Text="Cuentame un chiste" 
                 SemanticProperties.Hint="Te mostrara un chiste"
-                Clicked="OnCounterClicked" />
+                Clicked="IrAJokesPage_Clicked" />
 
             <Button
-                x:Name="CounterBtn"
+                x:Name="IrAAboutPage"
                 Text="Acerca de mi" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked" />
+                SemanticProperties.Hint="Muestra informacion personal"
+                Clicked="IrAAboutPage_Clicked" />
 
         </VerticalStackLayout>
     </ScrollView>
